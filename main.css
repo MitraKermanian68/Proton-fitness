@@ -1,0 +1,915 @@
+/*--------------------------------
+-(0) -> Plugins
+----------------------------------
+-(1) -> Header
+-(2) -> Homebar
+-(3) -> Clients
+-(4) -> Features
+
+--------------------------------*/
+@font-face {
+    font-family: "Vazir";
+    src: url(../assets/fonts/Vazir-Thin-FD.woff2);
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url(../assets/fonts/Vazir-light-FD.woff2);
+    font-style:normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url(../assets/fonts/Vazir-Medium-FD.woff2);
+    font-style: normal;
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url(../assets/fonts/Vazir-Bold-FD.woff2);
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Vazir";
+    src: url(../assets/fonts/Vazir-Black-FD.woff2);
+    font-style: normal;
+    font-weight: 900;
+}
+:root{
+    --primary-color: rgb(233, 30, 99);
+    --primary-color250: rgba(233, 30, 99, 0.25);
+    --primary-color150: rgba(233, 30, 99, 0.15);
+    --secondary-color: rgba(41, 38, 64, 1);
+    --light-color: rgb(255, 255, 255);
+    --light-thick-color: rgba(255, 255, 255, 0.7);
+    --gray-color: rgba(200, 200, 200);
+    --primary-font: "Vazir";
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all ease 200ms;
+    font-family: var(--primary-font);
+}
+html,body {
+    overflow-x: hidden;
+    direction: rtl;
+}
+.icon {
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+.main-btn{
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.25rem 1.5rem;
+    margin-right: 1rem;
+    color: var(--light-color);
+    font-size: 14px;
+ }
+.main-btn:hover {
+    background-color: var(--light-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+ }
+
+ .main-btn-rounded {
+    border-radius: 3rem;
+ }
+
+ .section-title-before {
+    position: relative;
+    color: var(--primary-color);
+    font-size: 14px;
+    padding-right: 1px;
+ }
+
+ .section-title-before::before {
+    position: absolute;
+    content:"";
+    color: var(--primary-color);
+    font-size: 16px;
+    height: 100%;
+    width: 1rem;
+    border-radius: 1rem;
+    padding-right: 0;
+ }
+
+ .homebar-buttons a {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+ }
+
+ .homebar-buttons {
+    border-radius: 3rem;
+    border: none;
+ }
+.buy-btn a{
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+ }
+ .buy-btn:hover a{
+    color: var(--primary-color);
+ }
+ .buy-btn {
+    background-color: var(--primary-color);
+ }
+ 
+ .buy-btn:hover {
+    background-color: var(--light-color);
+    box-shadow: 0px 0px 10px var(--primary-color);
+ }
+ .call-us-btn a{
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+ }
+
+ .call-us-btn:hover a{
+    color: var(--light-color);
+ }
+ .call-us-btn {
+    background-color: var(--light-color);
+    box-shadow: 0px 0px 10px var(--primary-color);
+    
+ }
+ .call-us-btn:hover {
+    background-color: var(--primary-color);
+    
+ }
+
+ .section-title {
+    margin: 5rem auto5;
+    text-align: center;
+    position: relative;
+    padding: 6rem auto;
+ }
+
+ .section-title::after {
+    position: absolute;
+    content: "";
+    width: 5rem;
+    height: 5px;
+    background-color: var(--primary-color);
+    border-radius: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+ }
+
+ .section-title h4 {
+    font-size: 32px;
+    position: relative;
+    font-weight: 600;
+ }
+
+ .section-title h4::before {
+    position: absolute;
+    content: "ویژگی های محصول پروتون";
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-right: 2px solid var(--primary-color);
+    padding-right: 6px;
+    font-size: 14px;
+    color: var(--primary-color);
+ }
+
+ .section-title h4::after {
+    position: absolute;
+    content: "ویژگی";
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-right: 6px;
+    font-size: 250px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    opacity: 0.1;
+    z-index: -1;
+ }
+
+ .container {
+    max-width: 1250px;
+    margin: 0 auto;
+ }
+/*--------------------------------
+-(1) -> Header
+--------------------------------*/
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+.logo1 , .logo2 {
+    cursor: pointer;
+}
+.main-header .navbar {
+    display: flex;
+    align-items: center;
+   
+}
+
+.main-header .navbar .menubar{
+    display: flex;
+    align-items: center;
+   padding: 0 1.5rem;
+}
+
+.main-header .navbar .menubar li a{
+   padding: 0 0.5rem;
+   color: var(--secondary-color);
+   font-size: 14px;
+}
+
+.main-header .navbar .menubar li:hover a{
+    color: var(--primary-color);
+ }
+
+ .main-header .left-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 20px;
+ }
+
+ .main-header .left-buttons a i{
+    color: var(--light-color);
+ }
+
+ .main-header .left-buttons a:hover i {
+    color: var(--light-thick-color);
+ }
+ 
+ .homebar{
+    position: relative;
+    height: 100vh;
+ }
+
+ .homebar .img-primary-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 88vh;
+ }
+
+ .homebar .right{
+    position: absolute;
+    top: 30%;
+    right: 2%;
+    
+ }
+ .homebar .right h1{
+    width: 50%;
+    font-size: 50px;
+ }
+
+.bottom-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.homabar-man-image{
+    position: absolute;
+    left: 15%;
+    bottom: 0;
+    transform: translateY(-15%);
+    height: 80vh;
+    z-index: 10;
+}
+
+.homabar-man-image-before{
+    position: absolute;
+    left: 15%;
+    bottom: 20%;
+    height: 30rem;
+    z-index: 9;
+}
+
+.homebar .before-Circle-white{
+    position: absolute;
+    left: 20%;
+    bottom: 65%;
+    transform: translateY(-20%, -65%);
+    height: 7rem;
+    z-index: 8;
+}
+
+.homebar .before-Polygon-primary{
+    position: absolute;
+    left: 45%;
+    bottom: 40%;
+    transform: translateY(-45%, -40%);
+    height: 5rem;
+}
+
+.homebar .before-Polygon-white{
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+    transform: translateY(-10%, -20%);
+    height: 4rem;
+}
+
+.clients {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -3.5rem auto 7rem auto;
+    gap: 2rem;
+    padding: 0 0 2rem 0;
+    width: fit-content;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.clients img {
+   height: 4rem;
+}
+
+.features-area__inner {
+    margin: 10rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
+}
+
+.features-area__card {
+    width: 25rem;
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    box-shadow: 0px 0px 15px var(--gray-color);
+    border-radius: 0.5rem;
+}
+
+.features-area__card img {
+    z-index: 1;
+}
+
+
+.features-area__card:hover {
+    background-color: var(--secondary-color);
+}
+
+.features-area__card:hover h3 {
+    color: var(--light-color);
+
+}
+
+.features-area__card:hover p {
+    color: var(--light-color);
+
+}
+
+.features-area__card p {
+    font-size: 18px;
+    color: var(--secondary-color);
+    opacity: 0.75;
+    padding: 0 3rem;
+    text-align: center;
+    position: relative;
+}
+.features-area__card .p1::before {
+    position: absolute;
+    font-size: 130px;
+    color: var(--secondary-color);
+    content: "01";
+    top: -300px;
+    right: 1%;
+    transform: translatex(-1%);
+    opacity: 0.25;
+}
+
+.features-area__card:hover .p1::before {
+    color: var(--light-color);
+}
+.features-area__card .p2::before {
+    position: absolute;
+    font-size: 130px;
+    color: var(--secondary-color);
+    content: "02";
+    top: -300px;
+    right: 1%;
+    transform: translatex(-1%);
+    opacity: 0.25;
+}
+
+.features-area__card:hover .p2::before {
+    color: var(--light-color);
+}
+
+.features-area__card .p3::before {
+    position: absolute;
+    font-size: 130px;
+    color: var(--secondary-color);
+    content: "03";
+    top: -300px;
+    right: 1%;
+    transform: translatex(-1%);
+    opacity: 0.25;
+}
+
+.features-area__card:hover .p3::before {
+    color: var(--light-color);
+}
+
+.features-area__card .p4::before {
+    position: absolute;
+    font-size: 130px;
+    color: var(--secondary-color);
+    content: "04";
+    top: -300px;
+    right: 1%;
+    transform: translatex(-1%);
+    opacity: 0.25;
+}
+
+.features-area__card:hover .p4::before {
+    color: var(--light-color);
+}
+
+.features-area__card .p5::before {
+    position: absolute;
+    font-size: 130px;
+    color: var(--secondary-color);
+    content: "05";
+    top: -300px;
+    right: 1%;
+    transform: translatex(-1%);
+    opacity: 0.25;
+}
+
+.features-area__card:hover .p5::before {
+    color: var(--light-color);
+}
+
+.features-area__card .p6::before {
+    position: absolute;
+    font-size: 130px;
+    color: var(--secondary-color);
+    content: "06";
+    top: -300px;
+    right: 1%;
+    transform: translatex(-1%);
+    opacity: 0.25;
+}
+
+.features-area__card:hover .p6::before {
+   color: var(--light-color);
+   
+}
+
+.services-area{
+    margin: 10rem 0;
+    position: relative;
+}
+
+.services-area .right {
+    background-color: var(--primary-color250);
+    position: relative;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+    border-radius: 8rem 0 0 1rem;
+}
+
+.services-area .right::after{
+    position: absolute;
+    content: "";
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50rem;
+    background-color: var(--primary-color);
+}
+
+.services-area .right img{
+    height: 20rem;
+    z-index: 1;
+}
+
+.services-area .left {
+    position: absolute;
+    right: 750px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.services-area .left::before {
+    content: "انتخاب";
+    color: var(--secondary-color);
+    opacity: 0.1;
+    font-size: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.services-area .section-title{
+    padding: 2rem 0 !important;
+    margin: 0;
+}
+
+.services-area .section-title h4{
+    text-align: right;
+}
+
+.services-area .section-title h4::before {
+    position: absolute;
+    content: "ویژگی های محصول پروتون";
+    top: -30px;
+    left: auto;
+    right: 0;
+    transform: translateY(0);
+    border-right: 2px solid var(--primary-color);
+    padding-right: 6px;
+    font-size: 14px;
+    color: var(--primary-color);
+ } 
+.services-area .left .section-title h4::after {
+    display: none;
+    content: "";
+}
+
+.services-area .left .section-title::after {
+    display: none;
+    content: "";
+}
+
+.services-area .left .main-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 3rem;
+}
+
+.services-area .left ul {
+    padding: 2rem 0;
+}
+
+.services-area .left ul li {
+    position: relative;
+    padding: 15px 0;
+    color: var(--secondary-color);
+    opacity: 0.7;
+}
+
+.services-area .left ul li::before {
+    position: absolute;
+    content: "";
+    width: 2.5rem;
+    height:2.5rem;
+    border: 4px solid var(--light-color);
+    background-color: #FF9800;
+    border-radius: 50%;
+    top: 50%;
+    right: -75px;
+    transform: translateY(-50%);
+}
+
+.produvt-introduction {
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+.produvt-introduction p {
+    color: var(--light-color);
+    font-size: 14px;
+    line-height: 2;
+    padding: 1rem;
+    opacity: 0.6;
+    font-weight: 200;
+}
+
+.produvt-introduction .section-title h4 {
+    color: var(--light-color);
+    text-align: right;
+}
+
+.produvt-introduction .section-title h4::before {
+    position: absolute;
+    content: "ویژگی های محصول پروتون";
+    top: -30px;
+    left: auto;
+    right: 0;
+    transform: translateY(0);
+    border-right: 2px solid var(--primary-color);
+    padding-right: 6px;
+    font-size: 14px;
+    color: var(--primary-color);
+ } 
+
+.produvt-introduction .section-title::after {
+    display: none;
+    content: "";
+}
+
+ .produvt-introduction .section-title h4::after {
+    content: "معرفی";
+    top: 40%;
+    right: 0;
+    transform: translate(0, -40%);
+    color: var(--light-color);
+    opacity: 0.03;
+    z-index: 1;
+ }
+
+ .produvt-introduction .left .image {
+    height: 30rem;
+    position: relative;
+ }
+
+ .produvt-introduction .left .image img{
+    height: 100%;
+    border-radius: 1rem;
+ }
+
+ .showcase-area {
+    margin-top: 10rem;
+    
+ }
+
+ .showcase-area .section-title h4::before{
+    content: "گالری";
+ }
+ .showcase-area .section-title h4::after{
+    content: "ویترین";
+ }
+
+.showcase-area__inner {
+ 
+    margin-top: 13rem;
+}
+.showcase-area__inner .showcase-navbar{
+    width: 15rem;
+}
+.showcase-navbar__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    font-size: 16px;
+    
+}
+
+.showcase-navbar__buttons i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    padding: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--gray-color);
+    color: var(--secondary-color);
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.showcase-navbar__buttons.active i {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: rotate(45deg);
+}
+
+.showcase-area .right {
+    position: absolute;
+    z-index: 1;
+}
+
+.showcase-area .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-left: 5rem;
+    z-index: -1;
+}
+.showcase-area .left .shocase-area__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-color);
+    width: 17rem;
+    height: 17rem;
+    border-radius: 10px;
+    margin: 1rem;
+
+}
+.showcase-area .left .shocase-area__item:hover{
+    background-color: var(--primary-color250);
+    box-shadow: 1px 1px 5px var(--primary-color250);
+}
+
+.progress-area {
+    margin: 5rem 0;
+}
+.progress-area__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.progress-area__inner .progress-card {
+    width: 25rem;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    box-shadow: 0px 8px 15px rgba(47, 47, 47, 0.439);
+    border-radius: 10px;
+}
+
+.progress-area__inner .progress-card:hover{
+    background-color: var(--primary-color250);
+    scale: 110%;
+}
+
+.progress-area__inner .progress-card .circle-progress {
+    background: conic-gradient(#e91e63 100deg, rgba(0, 0, 0, 0.075) 0deg);
+    width:5rem;
+    height:5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.progress-area__inner .progress-card:first-child .circle-progress {
+    background: conic-gradient(#e91e63 40deg, rgba(0, 0, 0, 0.075) 0deg);
+}
+.progress-area__inner .progress-card:nth-child(2) .circle-progress {
+    background: conic-gradient(#e91e63 220deg, rgba(0, 0, 0, 0.075) 0deg);
+}
+.progress-area__inner .progress-card:last-child .circle-progress {
+    background: conic-gradient(#e91e63 175deg, rgba(0, 0, 0, 0.075) 0deg);
+}
+
+.progress-area__inner .progress-card .circle-progress::before {
+    content: "";
+    background-color: var(--light-color);
+    width:80%;
+    height: 80%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-area__inner .progress-card .circle-progress span {
+    color: var(--primary-color);
+    z-index: 1;
+    position: absolute;
+}
+
+.progress-area__inner .progress-card .left-content h4{
+    font-size: 18px;
+}
+
+.progress-area__inner .progress-card .left-content p{
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+.faq__area{
+    margin: 8rem 0;
+}
+
+.faq__area-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap:10rem;
+}
+
+.faq__area-inner .right__content{
+    width: 40%;
+}
+
+.faq__area-inner .left__content {
+    z-index: 1;
+    position: relative ;
+}
+.faq__area-inner .left__content::before{
+    content: "";
+    background-color: #e91e6282;
+    position: absolute ;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    z-index: -1;
+    top: -7%;
+    left: -19%;
+    transform: translat(7% , 19%);
+}
+
+.faq__area-inner .left__content img {
+    height: 50vh;
+} 
+
+.faq__area-inner .section-title {
+    margin-bottom: 5rem;
+}
+.faq__area-inner .section-title h4{
+    text-align: right;
+}
+
+.faq__area-inner .section-title h4::before{
+    right: 0 !important;
+    transform: translate(0);
+}
+
+.faq__area-inner .section-title h4::after{
+    font-size: 150px;
+    opacity: 0.05 !important;
+    top: -200%;
+    right: 0 !important;
+    transform: translate(0);
+}
+
+.faq__area-inner .section-title::after{
+    right: 0 !important;
+    transform: translate(0);
+}
+
+.acc-toggler{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.acc-toggler i {
+    color: var(--primary-color);
+}
+
+.faq__area-accordian .acc-card.active .acc-toggler i {
+    transform: rotate(45deg);
+}
+
+.acc-card {
+    background-color: #FFF5F9;
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+.acc-content p {
+    color:#7682A3 ;
+    font-size: 14px;
+    
+}
+
+.faq__area-accordian {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.faq__area-accordian .acc-card .acc-content{
+    max-height: 0;
+    overflow: hidden;
+}
+
+.faq__area-accordian .acc-card.active .acc-content{
+    margin-top: 1rem;
+    max-height: 1000px;
+}
+
